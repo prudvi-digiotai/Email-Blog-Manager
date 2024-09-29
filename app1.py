@@ -1,3 +1,34 @@
+import os
+import json
+
+token = os.getenv('token')
+refresh_token = os.getenv('refresh_token')
+token_uri = os.getenv('token_uri')
+client_id_mail = os.getenv('client_id_mail')
+client_secret = os.getenv('client_secret')
+scopes = os.getenv('scopes')
+universe_domain = os.getenv('universe_domain')
+account = os.getenv('account')
+expiry = os.getenv('expiry')
+
+token_info = {
+    "token": token,
+    "refresh_token": refresh_token,
+    "token_uri": token_uri,
+    "client_id": client_id_mail,
+    "client_secret": client_secret,
+    "scopes": ["https://www.googleapis.com/auth/gmail.send"],
+    "universe_domain": universe_domain,
+    "account": account,
+    "expiry": expiry
+}
+pprint(token_info)
+
+with open('token.json', 'w') as f:
+    json.dump(token_info, f)
+
+
+
 import streamlit as st
 from vyzeai.agents.prebuilt_agents import ResearchAgent, VideoAudioBlogAgent, YTBlogAgent, BlogAgent, VideoAgent, EmailAgent
 
