@@ -116,7 +116,7 @@ if st.session_state.api_key:
         if st.button("send mail", key='mail_button'):
             email_agent = EmailAgent(api_key)
             ack = email_agent.send_email(to_mail, 'Your content', 'Thank you for using our product.', st.session_state.content, token_json_file_path='token.json')
-            st.write(ack)
+            st.write(ack[0])
 
                 
 
