@@ -87,6 +87,7 @@ if st.session_state.api_key:
             st.image(contents[-1][-1][0])
             st.session_state['content'] = contents[0][1]
             st.session_state['image_path'] = contents[-1][-1][0]
+            st.write(st.session_state['content'])
 
         if st.session_state['selectbox_option'] == 'video/audio to blog':
             # research_agent = ResearchAgent(st.session_state.api_key)
