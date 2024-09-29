@@ -22,7 +22,6 @@ token_info = {
     "account": account,
     "expiry": expiry
 }
-pprint(token_info)
 
 with open('token.json', 'w') as f:
     json.dump(token_info, f)
